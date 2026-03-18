@@ -88,14 +88,16 @@ const GuidancePanel = ({ type, className }: GuidancePanelProps) => {
         </p>
 
         {/* CTA Button */}
-        <Link to={content.buttonLink}>
-          <Button 
-            variant={content.variant === 'red' ? 'cyber' : content.variant === 'purple' ? 'cyberPurple' : 'cyberSecondary'} 
+        <Link to={content.buttonLink} className="inline-flex justify-center">
+          <Button
+            variant={content.variant === 'red' ? 'cyber' : content.variant === 'purple' ? 'cyberPurple' : 'cyberSecondary'}
             size="xl"
-            className="inline-flex items-center justify-center"
+            className="!justify-center"
           >
-            {content.buttonText}
-            <ChevronRight className="w-5 h-5 ml-1" />
+            <span className="inline-flex items-center justify-center gap-2 text-center">
+              <span>{content.buttonText}</span>
+              <ChevronRight className="w-5 h-5 !ml-0" />
+            </span>
           </Button>
         </Link>
 
