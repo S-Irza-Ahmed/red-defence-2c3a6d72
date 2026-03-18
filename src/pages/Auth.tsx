@@ -44,9 +44,20 @@ const Auth = () => {
     }
   }, [step, otpTimer]);
 
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
   const handleCredentialsSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
+    setEmailError('');
+
+    if (!validateEmail(formData.email)) {
+      setEmailError('Please enter a valid email address');
+      return;
+    }
 
     if (mode === 'signup' && formData.password !== formData.confirmPassword) {
       setError('Passwords do not match');
