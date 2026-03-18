@@ -83,7 +83,7 @@ const GuidancePanel = ({ type, className }: GuidancePanelProps) => {
         </h2>
 
         {/* Description */}
-        <p className="text-muted-foreground text-lg mb-8 max-w-md mx-auto">
+        <p className="text-muted-foreground text-lg mb-8 max-w-sm mx-auto text-balance">
           {content.description}
         </p>
 
@@ -92,10 +92,10 @@ const GuidancePanel = ({ type, className }: GuidancePanelProps) => {
           <Button 
             variant={content.variant === 'red' ? 'cyber' : content.variant === 'purple' ? 'cyberPurple' : 'cyberSecondary'} 
             size="xl"
-            className="min-w-[280px]"
+            className="inline-flex items-center justify-center"
           >
             {content.buttonText}
-            <ChevronRight className="w-5 h-5" />
+            <ChevronRight className="w-5 h-5 ml-1" />
           </Button>
         </Link>
 
