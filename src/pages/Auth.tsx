@@ -26,6 +26,7 @@ const Auth = () => {
     confirmPassword: '',
   });
   const [error, setError] = useState('');
+  const [emailError, setEmailError] = useState('');
 
   // OTP countdown timer
   useEffect(() => {
