@@ -150,7 +150,7 @@ const Auth = () => {
               <span className="font-display text-3xl font-bold text-gradient-red-blue">RED DEFENCE</span>
             </div>
             <p className="text-lg text-muted-foreground">
-              {step === 'credentials' && (mode === 'login' ? 'Welcome back!' : 'Join the defence force')}
+              {step === 'credentials' && (mode === 'login' ? 'Welcome back!' : 'Your digital shield starts here.')}
               {step === 'otp' && 'Verify your identity'}
               {step === 'success' && 'Access granted'}
             </p>
