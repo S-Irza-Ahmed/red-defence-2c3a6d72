@@ -223,7 +223,7 @@ const Auth = () => {
                       <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
                       <Input
                         type="email"
-                        placeholder="commander@reddefence.io"
+                        placeholder="yourname@gmail.com"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         className="pl-12 h-14 bg-input border-2 border-border focus:border-primary focus:ring-2 focus:ring-primary/20 text-base"
