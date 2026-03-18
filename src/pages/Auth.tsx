@@ -247,6 +247,7 @@ const Auth = () => {
                       {emailError && (
                         <p className="text-sm text-destructive font-medium mt-1">{emailError}</p>
                       )}
+                    </div>
 
                   {mode === 'signup' && (
                     <div className="space-y-2 animate-fade-in-up">
