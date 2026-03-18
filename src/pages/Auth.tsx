@@ -235,13 +235,18 @@ const Auth = () => {
                       <Input
                         type="email"
                         placeholder="yourname@gmail.com"
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="pl-12 h-14 bg-input border-2 border-border focus:border-primary focus:ring-2 focus:ring-primary/20 text-base"
-                        required
-                      />
-                    </div>
-                  </div>
+                          value={formData.email}
+                          onChange={(e) => {
+                            setFormData({ ...formData, email: e.target.value });
+                            if (emailError) setEmailError('');
+                          }}
+                          className="pl-12 h-14 bg-input border-2 border-border focus:border-primary focus:ring-2 focus:ring-primary/20 text-base"
+                          required
+                        />
+                      </div>
+                      {emailError && (
+                        <p className="text-sm text-destructive font-medium mt-1">{emailError}</p>
+                      )}
 
                   {mode === 'signup' && (
                     <div className="space-y-2 animate-fade-in-up">
