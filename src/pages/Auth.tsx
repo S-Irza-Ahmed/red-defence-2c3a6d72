@@ -26,6 +26,7 @@ const Auth = () => {
     confirmPassword: '',
   });
   const [error, setError] = useState('');
+  const [emailError, setEmailError] = useState('');
 
   // OTP countdown timer
   useEffect(() => {
@@ -43,9 +44,20 @@ const Auth = () => {
     }
   }, [step, otpTimer]);
 
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
   const handleCredentialsSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
+    setEmailError('');
+
+    if (!validateEmail(formData.email)) {
+      setEmailError('Please enter a valid email address');
+      return;
+    }
 
     if (mode === 'signup' && formData.password !== formData.confirmPassword) {
       setError('Passwords do not match');
@@ -138,7 +150,7 @@ const Auth = () => {
               <span className="font-display text-3xl font-bold text-gradient-red-blue">RED DEFENCE</span>
             </div>
             <p className="text-lg text-muted-foreground">
-              {step === 'credentials' && (mode === 'login' ? `Welcome back, ${formData.name || 'Customer'}` : 'Join the defence force')}
+              {step === 'credentials' && (mode === 'login' ? 'Welcome back!' : 'Join the defence force')}
               {step === 'otp' && 'Verify your identity'}
               {step === 'success' && 'Access granted'}
             </p>
@@ -222,14 +234,20 @@ const Auth = () => {
                       <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
                       <Input
                         type="email"
-                        placeholder="commander@reddefence.io"
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="pl-12 h-14 bg-input border-2 border-border focus:border-primary focus:ring-2 focus:ring-primary/20 text-base"
-                        required
-                      />
+                        placeholder="yourname@gmail.com"
+                          value={formData.email}
+                          onChange={(e) => {
+                            setFormData({ ...formData, email: e.target.value });
+                            if (emailError) setEmailError('');
+                          }}
+                          className="pl-12 h-14 bg-input border-2 border-border focus:border-primary focus:ring-2 focus:ring-primary/20 text-base"
+                          required
+                        />
+                      </div>
+                      {emailError && (
+                        <p className="text-sm text-destructive font-medium mt-1">{emailError}</p>
+                      )}
                     </div>
-                  </div>
 
                   {mode === 'signup' && (
                     <div className="space-y-2 animate-fade-in-up">
