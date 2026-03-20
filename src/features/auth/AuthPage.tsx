@@ -44,6 +44,16 @@ const Auth = () => {
     }
   }, [step, otpTimer]);
 
+  const deriveDisplayName = (email: string, name?: string): string => {
+    if (name && name.trim()) {
+      const firstName = name.trim().split(' ')[0];
+      return firstName.charAt(0).toUpperCase() + firstName.slice(1);
+    }
+    const localPart = email.split('@')[0] || '';
+    const cleanName = localPart.split(/[._-]/)[0];
+    return cleanName.charAt(0).toUpperCase() + cleanName.slice(1).toLowerCase();
+  };
+
   const validateEmail = (email: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
@@ -74,8 +84,9 @@ const Auth = () => {
       setOtpTimer(60);
       setCanResend(false);
     } else {
-      // Login success - redirect to dashboard
-      login();
+      // Login: derive display name from email
+      const displayName = deriveDisplayName(formData.email);
+      login(displayName);
       setStep('success');
       setTimeout(() => navigate('/dashboard'), 1500);
     }
@@ -117,7 +128,8 @@ const Auth = () => {
       return;
     }
 
-    login();
+    const displayName = deriveDisplayName(formData.email, formData.name);
+    login(displayName);
     setStep('success');
     setTimeout(() => navigate('/dashboard'), 1500);
     setIsLoading(false);

@@ -1,5 +1,7 @@
 export interface WorkflowState {
   isAuthenticated: boolean;
+  userName: string;
+  isAuthLoading: boolean;
   hasScanCompleted: boolean;
   hasRiskAnalysisCompleted: boolean;
   hasAISolutionCompleted: boolean;
@@ -9,7 +11,7 @@ export interface WorkflowState {
 
 export interface WorkflowContextType {
   state: WorkflowState;
-  login: () => void;
+  login: (name?: string) => void;
   logout: () => void;
   completeScan: (target: string) => void;
   completeRiskAnalysis: () => void;

@@ -61,7 +61,13 @@ const Navbar = () => {
               <div className="flex items-center gap-3">
                 <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-secondary/10 border border-secondary/30">
                   <User className="w-4 h-4 text-secondary" />
-                  <span className="text-sm font-medium text-secondary">Commander</span>
+                  {state.isAuthLoading ? (
+                    <span className="inline-block w-16 h-4 rounded bg-secondary/20 animate-pulse" />
+                  ) : (
+                    <span className="text-sm font-medium text-secondary truncate max-w-[120px]">
+                      {state.userName || 'User'}
+                    </span>
+                  )}
                 </div>
                 <Button variant="glassRed" size="sm" onClick={handleLogout}>
                   <LogOut className="w-4 h-4" />
