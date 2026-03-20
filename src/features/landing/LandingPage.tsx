@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Shield, Scan, Brain, FileText, ChevronRight, Zap, Lock, Eye, ArrowRight, Sparkles, User, UserRound } from 'lucide-react';
+import { Shield, Scan, Brain, FileText, Zap, Lock, Eye, ArrowRight, Sparkles, User, UserRound } from 'lucide-react';
+import StepConnector from '@/components/ui/StepConnector';
 import { Button } from '@/components/ui/button';
 import GlassCard from '@/components/ui/GlassCard';
 import TypeWriter from '@/components/ui/TypeWriter';

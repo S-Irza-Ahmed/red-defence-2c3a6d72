@@ -100,6 +100,10 @@ export default {
           from: { transform: "scale(0.95)", opacity: "0" },
           to: { transform: "scale(1)", opacity: "1" },
         },
+        "connector-shimmer": {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(100%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -109,6 +113,7 @@ export default {
         "slide-in-right": "slide-in-right 0.5s ease-out",
         "slide-in-left": "slide-in-left 0.5s ease-out",
         "scale-in": "scale-in 0.3s ease-out",
+        "connector-shimmer": "connector-shimmer 2s linear infinite",
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
