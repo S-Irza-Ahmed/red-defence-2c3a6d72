@@ -128,7 +128,8 @@ const Auth = () => {
       return;
     }
 
-    login();
+    const displayName = deriveDisplayName(formData.email, formData.name);
+    login(displayName);
     setStep('success');
     setTimeout(() => navigate('/dashboard'), 1500);
     setIsLoading(false);
