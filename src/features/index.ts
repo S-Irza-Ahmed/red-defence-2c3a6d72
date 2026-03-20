@@ -1,0 +1,10 @@
+export { LandingPage } from './landing';
+export { AuthPage } from './auth';
+export { DashboardPage } from './dashboard';
+export { ScanPage } from './scan';
+export { RiskAnalysisPage } from './risk-analysis';
+export { AISolutionPage } from './ai-solution';
+export { ReportsPage } from './reports';
+export { ContactPage } from './contact';
+export { ServicesPage } from './services';
+export { NotFoundPage } from './not-found';

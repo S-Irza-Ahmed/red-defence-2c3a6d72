@@ -1,23 +1,5 @@
 import { createContext, useContext, useState, ReactNode } from 'react';
-
-interface WorkflowState {
-  isAuthenticated: boolean;
-  hasScanCompleted: boolean;
-  hasRiskAnalysisCompleted: boolean;
-  hasAISolutionCompleted: boolean;
-  lastScanTarget: string;
-  lastScanDate: string;
-}
-
-interface WorkflowContextType {
-  state: WorkflowState;
-  login: () => void;
-  logout: () => void;
-  completeScan: (target: string) => void;
-  completeRiskAnalysis: () => void;
-  completeAISolution: () => void;
-  resetWorkflow: () => void;
-}
+import type { WorkflowState, WorkflowContextType } from '@/types/workflow';
 
 const defaultState: WorkflowState = {
   isAuthenticated: false,
