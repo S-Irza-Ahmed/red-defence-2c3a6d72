@@ -1,62 +1,46 @@
-import { cn } from '@/lib/utils';
-
 interface StepConnectorProps {
   fromColor: string;
   toColor: string;
+  gradientId: string;
   active?: boolean;
   className?: string;
 }
 
 /**
- * Gradient connector line with arrowhead for workflow steppers.
- * Uses SVG linearGradient for smooth color transitions and a shimmer animation.
+ * SVG-based gradient connector line with arrowhead for workflow steppers.
+ * The SVG stretches to fill all available horizontal space.
  */
-const StepConnector = ({ fromColor, toColor, active = true, className }: StepConnectorProps) => {
-  const id = `gradient-${fromColor.replace(/[^a-z0-9]/gi, '')}-${toColor.replace(/[^a-z0-9]/gi, '')}`;
-
+const StepConnector = ({ fromColor, toColor, gradientId, active = true, className }: StepConnectorProps) => {
   return (
     <div
-      className={cn(
-        'flex items-center transition-opacity duration-500',
-        active ? 'opacity-100' : 'opacity-40',
-        className,
-      )}
+      className={className}
+      style={{
+        flex: 1,
+        display: 'flex',
+        alignItems: 'center',
+        minWidth: 32,
+        opacity: active ? 1 : 0.3,
+        transition: 'opacity 0.5s',
+      }}
     >
       <svg
-        viewBox="0 0 80 12"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="w-12 md:w-20 h-3 overflow-visible"
+        width="100%"
+        height="12"
+        viewBox="0 0 100 12"
         preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+        style={{ display: 'block', overflow: 'visible' }}
       >
         <defs>
-          <linearGradient id={id} x1="0%" y1="0%" x2="100%" y2="0%">
+          <linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stopColor={fromColor} />
             <stop offset="100%" stopColor={toColor} />
           </linearGradient>
-          <linearGradient id={`${id}-shimmer`} x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="transparent" />
-            <stop offset="40%" stopColor="transparent" />
-            <stop offset="50%" stopColor="rgba(255,255,255,0.4)" />
-            <stop offset="60%" stopColor="transparent" />
-            <stop offset="100%" stopColor="transparent" />
-          </linearGradient>
         </defs>
-
-        {/* Base gradient line */}
-        <line x1="0" y1="6" x2="72" y2="6" stroke={`url(#${id})`} strokeWidth="2" strokeLinecap="round" />
-
-        {/* Shimmer overlay */}
-        <line
-          x1="0" y1="6" x2="72" y2="6"
-          stroke={`url(#${id}-shimmer)`}
-          strokeWidth="2"
-          strokeLinecap="round"
-          className="animate-connector-shimmer"
-        />
-
-        {/* Arrowhead triangle */}
-        <polygon points="70,2 80,6 70,10" fill={toColor} />
+        {/* Horizontal gradient line */}
+        <line x1="0" y1="6" x2="88" y2="6" stroke={`url(#${gradientId})`} strokeWidth="2" />
+        {/* Solid arrowhead triangle */}
+        <polygon points="88,2 100,6 88,10" fill={toColor} />
       </svg>
     </div>
   );
