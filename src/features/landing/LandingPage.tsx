@@ -133,12 +133,19 @@ const Index = () => {
                       </span>
                     </div>
                     {index < workflowSteps.length - 1 && (
-                      <div className="flex items-center">
-                        <div className="w-6 md:w-10 h-[2px] bg-gradient-to-r from-primary/60 via-accent/60 to-secondary/60 relative overflow-hidden">
-                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent animate-slide-in-right" style={{ animationDuration: '2s', animationIterationCount: 'infinite' }} />
-                        </div>
-                        <ChevronRight className="w-4 h-4 text-muted-foreground" />
-                      </div>
+                      <StepConnector
+                        fromColor={
+                          workflowSteps[index].color === 'primary' ? 'hsl(0, 85%, 55%)'
+                          : workflowSteps[index].color === 'accent' ? 'hsl(270, 80%, 60%)'
+                          : 'hsl(200, 100%, 50%)'
+                        }
+                        toColor={
+                          workflowSteps[index + 1].color === 'primary' ? 'hsl(0, 85%, 55%)'
+                          : workflowSteps[index + 1].color === 'accent' ? 'hsl(270, 80%, 60%)'
+                          : 'hsl(200, 100%, 50%)'
+                        }
+                        active={index < activeStep}
+                      />
                     )}
                   </div>
                 );
