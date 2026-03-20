@@ -3,17 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Shield, Menu, X, LogOut, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useWorkflow } from '@/contexts/WorkflowContext';
-
-const navItems = [
-  { label: 'Home', path: '/' },
-  { label: 'Services', path: '/services' },
-  { label: 'Dashboard', path: '/dashboard' },
-  { label: 'Scan', path: '/scan' },
-  { label: 'Risk Analysis', path: '/risk' },
-  { label: 'AI Solution', path: '/ai-solution' },
-  { label: 'Reports', path: '/reports' },
-  { label: 'Contact', path: '/contact' },
-];
+import { NAV_ITEMS } from '@/constants';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -46,7 +36,7 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1">
-            {navItems.map((item) => (
+            {NAV_ITEMS.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
@@ -100,7 +90,7 @@ const Navbar = () => {
         {isMobileMenuOpen && (
           <div className="lg:hidden py-4 border-t border-border/30 animate-slide-in-right">
             <div className="flex flex-col gap-2">
-              {navItems.map((item) => (
+              {NAV_ITEMS.map((item) => (
                 <Link
                   key={item.path}
                   to={item.path}
