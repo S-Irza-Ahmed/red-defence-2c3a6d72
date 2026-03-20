@@ -44,6 +44,16 @@ const Auth = () => {
     }
   }, [step, otpTimer]);
 
+  const deriveDisplayName = (email: string, name?: string): string => {
+    if (name && name.trim()) {
+      const firstName = name.trim().split(' ')[0];
+      return firstName.charAt(0).toUpperCase() + firstName.slice(1);
+    }
+    const localPart = email.split('@')[0] || '';
+    const cleanName = localPart.split(/[._-]/)[0];
+    return cleanName.charAt(0).toUpperCase() + cleanName.slice(1).toLowerCase();
+  };
+
   const validateEmail = (email: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
