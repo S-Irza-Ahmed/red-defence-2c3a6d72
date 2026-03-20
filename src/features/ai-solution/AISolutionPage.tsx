@@ -348,7 +348,7 @@ app.use(helmet({
                   <p className="text-muted-foreground mb-8">
                     AI analysis finished. Save your assessment to access it in Reports.
                   </p>
-                  <div className="flex flex-wrap justify-center gap-4">
+                  <div className="flex flex-wrap justify-center items-center gap-4">
                     <Button 
                       variant="cyberPurple" 
                       size="xl"
@@ -358,12 +358,12 @@ app.use(helmet({
                       Save Assessment
                     </Button>
                     <Link to="/reports">
-                      <Button variant="glassBlue" size="lg">
+                      <Button variant="glassBlue" size="xl">
                         <Eye className="w-5 h-5" />
                         View in Reports
                       </Button>
                     </Link>
-                    <Button variant="glassBlue" size="lg">
+                    <Button variant="glassBlue" size="xl">
                       <Download className="w-5 h-5" />
                       Export Report
                     </Button>
