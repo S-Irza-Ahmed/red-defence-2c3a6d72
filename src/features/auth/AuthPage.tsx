@@ -74,8 +74,9 @@ const Auth = () => {
       setOtpTimer(60);
       setCanResend(false);
     } else {
-      // Login success - redirect to dashboard
-      login();
+      // Login: derive display name from email
+      const displayName = deriveDisplayName(formData.email);
+      login(displayName);
       setStep('success');
       setTimeout(() => navigate('/dashboard'), 1500);
     }
