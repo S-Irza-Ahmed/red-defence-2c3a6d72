@@ -195,15 +195,16 @@ const Index = () => {
                     </div>
                     {index < workflowSteps.length - 1 && (
                       <StepConnector
+                        gradientId={`bottom-connector-${index}`}
                         fromColor={
-                          workflowSteps[index].color === 'primary' ? 'hsl(0, 85%, 55%)'
-                          : workflowSteps[index].color === 'accent' ? 'hsl(270, 80%, 60%)'
-                          : 'hsl(200, 100%, 50%)'
+                          workflowSteps[index].color === 'primary' ? '#ef4444'
+                          : workflowSteps[index].color === 'accent' ? '#a855f7'
+                          : '#06b6d4'
                         }
                         toColor={
-                          workflowSteps[index + 1].color === 'primary' ? 'hsl(0, 85%, 55%)'
-                          : workflowSteps[index + 1].color === 'accent' ? 'hsl(270, 80%, 60%)'
-                          : 'hsl(200, 100%, 50%)'
+                          workflowSteps[index + 1].color === 'primary' ? '#ef4444'
+                          : workflowSteps[index + 1].color === 'accent' ? '#a855f7'
+                          : '#06b6d4'
                         }
                         active={true}
                       />
