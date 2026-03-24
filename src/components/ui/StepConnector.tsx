@@ -15,10 +15,10 @@ const StepConnector = ({ fromColor, toColor, gradientId, active = true, classNam
     <div
       className={className}
       style={{
-        flex: 1,
+        flex: '1 1 0%',
         display: 'flex',
         alignItems: 'center',
-        minWidth: 32,
+        minWidth: 60,
         opacity: active ? 1 : 0.3,
         transition: 'opacity 0.5s',
       }}
