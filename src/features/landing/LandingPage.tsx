@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Shield, Scan, Brain, FileText, Zap, Lock, Eye, ArrowRight, Sparkles, User, UserRound } from 'lucide-react';
 import StepConnector from '@/components/ui/StepConnector';
