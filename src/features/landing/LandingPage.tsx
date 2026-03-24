@@ -83,8 +83,8 @@ const Index = () => {
             </div>
 
             {/* Enhanced Main Title */}
-            <h1 className="font-display text-6xl md:text-8xl lg:text-9xl font-black mb-8 animate-fade-in-up leading-none" style={{ animationDelay: '0.1s' }}>
-              <span className="text-gradient-red-blue drop-shadow-[0_0_30px_hsl(var(--primary)/0.5)]">RED DEFENCE</span>
+            <h1 className="font-display text-6xl md:text-8xl lg:text-9xl font-black mb-8 animate-fade-in-up leading-none whitespace-nowrap" style={{ animationDelay: '0.1s' }}>
+               <span className="text-gradient-red-blue drop-shadow-[0_0_30px_hsl(var(--primary)/0.5)]">RED DEFENCE</span>
             </h1>
 
             {/* Enhanced Tagline with Typing Animation */}
