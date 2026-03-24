@@ -182,13 +182,12 @@ const Index = () => {
                 Security Workflow
               </h3>
               
-              <div className="flex items-center justify-between relative z-10">
+              <div className="flex items-center relative z-10">
                 {workflowSteps.map((step, index) => (
-                  <div key={step.label} className="flex items-center flex-1">
-                    <div className="flex flex-col items-center flex-1">
-                    <div className={`relative p-4 rounded-2xl bg-card border-2 border-${step.color}/30 mb-3 transition-all duration-500 hover:scale-110 hover:border-${step.color} group cursor-pointer shadow-[0_0_15px_hsl(var(--${step.color})/0.3),0_0_30px_hsl(var(--${step.color})/0.15)]`}>
+                  <React.Fragment key={step.label}>
+                    <div className="flex flex-col items-center shrink-0">
+                      <div className={`relative p-4 rounded-2xl bg-card border-2 border-${step.color}/30 mb-3 transition-all duration-500 hover:scale-110 hover:border-${step.color} group cursor-pointer shadow-[0_0_15px_hsl(var(--${step.color})/0.3),0_0_30px_hsl(var(--${step.color})/0.15)]`}>
                         <step.icon className={`w-7 h-7 text-${step.color} transition-all duration-300 group-hover:scale-110 drop-shadow-[0_0_8px_hsl(var(--${step.color})/0.8)]`} />
-                        {/* Persistent glow effect */}
                         <div className={`absolute inset-0 rounded-2xl bg-${step.color}/10 blur-xl opacity-100`} />
                       </div>
                       <span className="text-base font-semibold text-foreground">{step.label}</span>
@@ -208,9 +207,10 @@ const Index = () => {
                           : '#06b6d4'
                         }
                         active={true}
+                        className="mx-2"
                       />
                     )}
-                  </div>
+                  </React.Fragment>
                 ))}
               </div>
             </div>
