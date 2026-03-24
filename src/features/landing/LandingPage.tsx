@@ -101,7 +101,7 @@ const Index = () => {
             </p>
 
             {/* Animated Workflow Icons */}
-            <div className="flex items-center justify-center mb-14 animate-fade-in-up max-w-3xl mx-auto w-full" style={{ animationDelay: '0.4s' }}>
+            <div className="flex items-center mb-14 animate-fade-in-up max-w-3xl mx-auto w-full" style={{ animationDelay: '0.4s' }}>
               {workflowSteps.map((step, index) => {
                 const Icon = step.icon;
                 const colorClass = step.color === 'primary' ? 'text-primary border-primary/40 hover:border-primary hover:shadow-[0_0_20px_hsl(var(--primary)/0.4)]' 
