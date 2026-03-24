@@ -100,7 +100,7 @@ const Index = () => {
             </p>
 
             {/* Animated Workflow Icons */}
-            <div className="flex items-center justify-center gap-2 md:gap-4 mb-14 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+            <div className="flex items-center justify-center mb-14 animate-fade-in-up max-w-3xl mx-auto w-full" style={{ animationDelay: '0.4s' }}>
               {workflowSteps.map((step, index) => {
                 const Icon = step.icon;
                 const colorClass = step.color === 'primary' ? 'text-primary border-primary/40 hover:border-primary hover:shadow-[0_0_20px_hsl(var(--primary)/0.4)]' 
@@ -114,9 +114,9 @@ const Index = () => {
                 const isCompleted = index < activeStep;
                 
                 return (
-                  <div key={step.label} className="flex items-center gap-2 md:gap-4">
+                  <React.Fragment key={step.label}>
                     <div 
-                      className="group flex flex-col items-center transition-all duration-500"
+                      className="group flex flex-col items-center transition-all duration-500 shrink-0"
                       style={{ animationDelay: `${0.5 + index * 0.15}s` }}
                     >
                       <div className={`relative w-12 h-12 md:w-14 md:h-14 rounded-xl ${bgClass} border ${colorClass} flex items-center justify-center transition-all duration-300 group-hover:scale-110 ${isActive ? 'scale-110' : ''} ${isCompleted ? 'opacity-60' : ''}`}>
@@ -146,9 +146,10 @@ const Index = () => {
                           : '#06b6d4'
                         }
                         active={index < activeStep}
+                        className="mx-2"
                       />
                     )}
-                  </div>
+                  </React.Fragment>
                 );
               })}
             </div>
