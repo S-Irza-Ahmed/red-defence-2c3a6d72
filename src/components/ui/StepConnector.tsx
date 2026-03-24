@@ -1,16 +1,16 @@
 interface StepConnectorProps {
   fromColor: string;
   toColor: string;
-  gradientId: string;
+  gradientId?: string;
   active?: boolean;
   className?: string;
 }
 
 /**
- * SVG-based gradient connector line with arrowhead for workflow steppers.
- * The SVG stretches to fill all available horizontal space.
+ * Gradient connector line with arrowhead for workflow steppers.
+ * Uses CSS gradient + a triangle border-hack for the arrowhead.
  */
-const StepConnector = ({ fromColor, toColor, gradientId, active = true, className }: StepConnectorProps) => {
+const StepConnector = ({ fromColor, toColor, active = true, className }: StepConnectorProps) => {
   return (
     <div
       className={className}
@@ -23,25 +23,25 @@ const StepConnector = ({ fromColor, toColor, gradientId, active = true, classNam
         transition: 'opacity 0.5s',
       }}
     >
-      <svg
-        width="100%"
-        height="12"
-        viewBox="0 0 100 12"
-        preserveAspectRatio="none"
-        xmlns="http://www.w3.org/2000/svg"
-        style={{ display: 'block', overflow: 'visible' }}
-      >
-        <defs>
-          <linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor={fromColor} />
-            <stop offset="100%" stopColor={toColor} />
-          </linearGradient>
-        </defs>
-        {/* Horizontal gradient line */}
-        <line x1="0" y1="6" x2="88" y2="6" stroke={`url(#${gradientId})`} strokeWidth="2.5" vectorEffect="non-scaling-stroke" />
-        {/* Solid arrowhead triangle */}
-        <polygon points="88,2 100,6 88,10" fill={toColor} />
-      </svg>
+      {/* Gradient line */}
+      <div
+        style={{
+          flex: 1,
+          height: 2,
+          background: `linear-gradient(to right, ${fromColor}, ${toColor})`,
+        }}
+      />
+      {/* Arrow triangle */}
+      <div
+        style={{
+          width: 0,
+          height: 0,
+          borderTop: '5px solid transparent',
+          borderBottom: '5px solid transparent',
+          borderLeft: `8px solid ${toColor}`,
+          flexShrink: 0,
+        }}
+      />
     </div>
   );
 };
