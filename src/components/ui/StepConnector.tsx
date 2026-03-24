@@ -38,7 +38,7 @@ const StepConnector = ({ fromColor, toColor, gradientId, active = true, classNam
           </linearGradient>
         </defs>
         {/* Horizontal gradient line */}
-        <line x1="0" y1="6" x2="88" y2="6" stroke={`url(#${gradientId})`} strokeWidth="2" />
+        <line x1="0" y1="6" x2="88" y2="6" stroke={`url(#${gradientId})`} strokeWidth="2.5" vectorEffect="non-scaling-stroke" />
         {/* Solid arrowhead triangle */}
         <polygon points="88,2 100,6 88,10" fill={toColor} />
       </svg>
