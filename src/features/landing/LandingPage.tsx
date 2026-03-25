@@ -158,7 +158,7 @@ const Index = () => {
 
             <div className="flex flex-col sm:flex-row gap-5 justify-center animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
               <Link to="/scan">
-                <Button variant="cyber" size="xl" className="w-full sm:w-auto group relative overflow-hidden font-display tracking-widest">
+                <Button variant="cyber" size="xl" className="w-full sm:w-auto group relative overflow-hidden">
                   <span className="relative z-10 flex items-center gap-2">
                     Start Security Scan
                     <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
@@ -166,7 +166,7 @@ const Index = () => {
                 </Button>
               </Link>
               <Link to="/services">
-                <Button variant="glassBlue" size="xl" className="w-full sm:w-auto font-display tracking-widest">
+                <Button variant="glassBlue" size="xl" className="w-full sm:w-auto">
                   Explore Services
                 </Button>
               </Link>

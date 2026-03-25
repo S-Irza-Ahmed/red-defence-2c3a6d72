@@ -40,7 +40,7 @@ const Navbar = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`relative px-4 py-2 text-sm font-body font-semibold tracking-widest uppercase transition-all duration-300 rounded-lg
+                className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg
                   ${isActive(item.path)
                     ? 'text-primary'
                     : 'text-muted-foreground hover:text-foreground'
