@@ -14,9 +14,10 @@ export default {
     },
     extend: {
       fontFamily: {
+        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         display: ['"Bebas Neue"', 'sans-serif'],
-        tech: ['Rajdhani', 'sans-serif'],
-        body: ['Rajdhani', 'sans-serif'],
+        tech: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        body: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         hero: ['"Black Ops One"', 'sans-serif'],
       },
       colors: {
