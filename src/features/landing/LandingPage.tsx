@@ -191,8 +191,8 @@ const Index = () => {
                         <step.icon className={`w-7 h-7 text-${step.color} transition-all duration-300 group-hover:scale-110 drop-shadow-[0_0_8px_hsl(var(--${step.color})/0.8)]`} />
                         <div className={`absolute inset-0 rounded-2xl bg-${step.color}/10 blur-xl opacity-100`} />
                       </div>
-                      <span className="text-base font-semibold text-foreground">{step.label}</span>
-                      <span className="text-xs text-muted-foreground mt-1 hidden sm:block">{step.description}</span>
+                      <span className="text-base font-display tracking-wide text-foreground">{step.label}</span>
+                      <span className="text-xs font-body text-muted-foreground mt-1 hidden sm:block">{step.description}</span>
                     </div>
                     {index < workflowSteps.length - 1 && (
                       <StepConnector
