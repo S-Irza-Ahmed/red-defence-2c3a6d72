@@ -88,7 +88,7 @@ const Index = () => {
             </h1>
 
             {/* Enhanced Tagline with Typing Animation */}
-            <p className="text-2xl md:text-3xl text-foreground font-light mb-6 max-w-3xl mx-auto h-[1.5em]">
+            <p className="text-2xl md:text-3xl text-foreground font-display tracking-wide mb-6 max-w-3xl mx-auto h-[1.5em]">
               <TypeWriter 
                 text="AI-Driven Cybersecurity and Threat Detection System" 
                 speed={40}
