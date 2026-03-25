@@ -96,7 +96,7 @@ const Index = () => {
               />
             </p>
 
-            <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto animate-fade-in-up leading-relaxed" style={{ animationDelay: '0.3s' }}>
+            <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto animate-fade-in-up font-body font-medium leading-relaxed" style={{ animationDelay: '0.3s' }}>
               A next-generation security tool that combines intelligent scanning with AI-driven threat analysis.
             </p>
 
