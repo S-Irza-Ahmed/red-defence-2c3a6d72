@@ -14,10 +14,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        sans: ['"Open Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         display: ['"Bebas Neue"', 'sans-serif'],
-        tech: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        body: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        tech: ['"Open Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        body: ['"Open Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         hero: ['"Black Ops One"', 'sans-serif'],
       },
       colors: {

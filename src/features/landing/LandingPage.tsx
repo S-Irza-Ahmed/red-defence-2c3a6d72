@@ -166,7 +166,7 @@ const Index = () => {
                 </Button>
               </Link>
               <Link to="/services">
-                <Button variant="glassBlue" size="xl" className="w-full sm:w-auto font-display tracking-widest">
+                <Button variant="glassBlue" size="xl" className="w-full sm:w-auto">
                   Explore Services
                 </Button>
               </Link>
