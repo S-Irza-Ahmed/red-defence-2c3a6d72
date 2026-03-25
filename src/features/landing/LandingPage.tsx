@@ -79,7 +79,7 @@ const Index = () => {
                   <Shield className="w-5 h-5 text-primary" />
                 </div>
               </div>
-              <span className="text-sm font-semibold tracking-wide text-gradient-red-blue">AI-Driven Cybersecurity Platform</span>
+              <span className="text-sm font-body font-semibold tracking-wide text-gradient-red-blue">AI-Driven Cybersecurity Platform</span>
             </div>
 
             {/* Enhanced Main Title */}
@@ -88,7 +88,7 @@ const Index = () => {
             </h1>
 
             {/* Enhanced Tagline with Typing Animation */}
-            <p className="text-2xl md:text-3xl text-foreground font-light mb-6 max-w-3xl mx-auto h-[1.5em]">
+            <p className="text-2xl md:text-3xl text-foreground font-display tracking-wide mb-6 max-w-3xl mx-auto h-[1.5em]">
               <TypeWriter 
                 text="AI-Driven Cybersecurity and Threat Detection System" 
                 speed={40}
@@ -96,7 +96,7 @@ const Index = () => {
               />
             </p>
 
-            <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto animate-fade-in-up leading-relaxed" style={{ animationDelay: '0.3s' }}>
+            <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto animate-fade-in-up font-body font-medium leading-relaxed" style={{ animationDelay: '0.3s' }}>
               A next-generation security tool that combines intelligent scanning with AI-driven threat analysis.
             </p>
 
@@ -129,7 +129,7 @@ const Index = () => {
                         )}
                         <Icon className={`relative z-10 w-5 h-5 md:w-6 md:h-6 ${step.color === 'primary' ? 'text-primary' : step.color === 'accent' ? 'text-accent' : 'text-secondary'}`} />
                       </div>
-                      <span className={`text-xs md:text-sm font-medium mt-2 transition-colors ${isActive ? 'text-foreground' : 'text-muted-foreground group-hover:text-foreground'}`}>
+                      <span className={`text-xs md:text-sm font-display tracking-wide mt-2 transition-colors ${isActive ? 'text-foreground' : 'text-muted-foreground group-hover:text-foreground'}`}>
                         {step.label}
                       </span>
                     </div>
@@ -158,7 +158,7 @@ const Index = () => {
 
             <div className="flex flex-col sm:flex-row gap-5 justify-center animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
               <Link to="/scan">
-                <Button variant="cyber" size="xl" className="w-full sm:w-auto group relative overflow-hidden">
+                <Button variant="cyber" size="xl" className="w-full sm:w-auto group relative overflow-hidden font-display tracking-widest">
                   <span className="relative z-10 flex items-center gap-2">
                     Start Security Scan
                     <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
@@ -166,7 +166,7 @@ const Index = () => {
                 </Button>
               </Link>
               <Link to="/services">
-                <Button variant="glassBlue" size="xl" className="w-full sm:w-auto">
+                <Button variant="glassBlue" size="xl" className="w-full sm:w-auto font-display tracking-widest">
                   Explore Services
                 </Button>
               </Link>
@@ -191,8 +191,8 @@ const Index = () => {
                         <step.icon className={`w-7 h-7 text-${step.color} transition-all duration-300 group-hover:scale-110 drop-shadow-[0_0_8px_hsl(var(--${step.color})/0.8)]`} />
                         <div className={`absolute inset-0 rounded-2xl bg-${step.color}/10 blur-xl opacity-100`} />
                       </div>
-                      <span className="text-base font-semibold text-foreground">{step.label}</span>
-                      <span className="text-xs text-muted-foreground mt-1 hidden sm:block">{step.description}</span>
+                      <span className="text-base font-display tracking-wide text-foreground">{step.label}</span>
+                      <span className="text-xs font-body text-muted-foreground mt-1 hidden sm:block">{step.description}</span>
                     </div>
                     {index < workflowSteps.length - 1 && (
                       <StepConnector
