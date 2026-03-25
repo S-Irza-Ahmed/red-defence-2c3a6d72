@@ -129,7 +129,7 @@ const Index = () => {
                         )}
                         <Icon className={`relative z-10 w-5 h-5 md:w-6 md:h-6 ${step.color === 'primary' ? 'text-primary' : step.color === 'accent' ? 'text-accent' : 'text-secondary'}`} />
                       </div>
-                      <span className={`text-xs md:text-sm font-medium mt-2 transition-colors ${isActive ? 'text-foreground' : 'text-muted-foreground group-hover:text-foreground'}`}>
+                      <span className={`text-xs md:text-sm font-display tracking-wide mt-2 transition-colors ${isActive ? 'text-foreground' : 'text-muted-foreground group-hover:text-foreground'}`}>
                         {step.label}
                       </span>
                     </div>
