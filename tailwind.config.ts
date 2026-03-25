@@ -14,9 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Orbitron', 'sans-serif'],
+        display: ['"Bebas Neue"', 'sans-serif'],
         tech: ['Rajdhani', 'sans-serif'],
-        body: ['Space Grotesk', 'sans-serif'],
+        body: ['Rajdhani', 'sans-serif'],
         hero: ['"Black Ops One"', 'sans-serif'],
       },
       colors: {
