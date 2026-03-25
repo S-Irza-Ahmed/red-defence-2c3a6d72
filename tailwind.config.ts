@@ -17,6 +17,7 @@ export default {
         display: ['Orbitron', 'sans-serif'],
         tech: ['Rajdhani', 'sans-serif'],
         body: ['Space Grotesk', 'sans-serif'],
+        hero: ['"Black Ops One"', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
