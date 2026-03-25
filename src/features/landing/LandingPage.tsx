@@ -79,7 +79,7 @@ const Index = () => {
                   <Shield className="w-5 h-5 text-primary" />
                 </div>
               </div>
-              <span className="text-sm font-semibold tracking-wide text-gradient-red-blue">AI-Driven Cybersecurity Platform</span>
+              <span className="text-sm font-body font-semibold tracking-wide text-gradient-red-blue">AI-Driven Cybersecurity Platform</span>
             </div>
 
             {/* Enhanced Main Title */}
