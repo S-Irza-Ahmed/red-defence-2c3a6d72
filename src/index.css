@@ -94,6 +94,7 @@
   .font-tech {
     font-family: 'Open Sans', ui-sans-serif, system-ui, sans-serif;
   }
+  #lovable-badge { display: none !important; }
 }
 
 @layer components {
