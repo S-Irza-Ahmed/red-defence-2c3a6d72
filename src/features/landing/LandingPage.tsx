@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Shield, Scan, Brain, FileText, Zap, Lock, Eye, ArrowRight, Sparkles, User, UserRound } from 'lucide-react';
 import StepConnector from '@/components/ui/StepConnector';
+import WorkflowSection from './sections/WorkflowSection';
 import { Button } from '@/components/ui/button';
 import GlassCard from '@/components/ui/GlassCard';
 import TypeWriter from '@/components/ui/TypeWriter';
