@@ -19,9 +19,9 @@ const steps: Step[] = [
     title: 'Login / Register',
     shortTitle: 'Login',
     description:
-      'Create an account, verify your identity using OTP, and access your secure workspace.',
+      'Create an account, verify your identity with OTP, and enter your secure workspace.',
     userAction:
-      'The user signs up or logs in, then completes OTP verification before entering the platform.',
+      'The user signs up or logs in first. OTP verification helps make sure only the real account owner can access the platform.',
     accent: 'red',
   },
   {
@@ -30,9 +30,9 @@ const steps: Step[] = [
     title: 'Verify Domain',
     shortTitle: 'Domain',
     description:
-      'Select an existing verified domain or verify a new domain before starting an assessment.',
+      'Select an already verified domain or verify a new domain before scanning.',
     userAction:
-      'The user confirms domain ownership so scans are only performed on authorized targets.',
+      'Red Defence confirms that the domain belongs to the user before allowing any scan. This keeps the assessment authorized and safe.',
     accent: 'cyan',
   },
   {
@@ -41,9 +41,9 @@ const steps: Step[] = [
     title: 'Start Security Scan',
     shortTitle: 'Scan',
     description:
-      'Enter the target domain and scan for exposed services, open ports, and security risks.',
+      'Enter the target domain and scan for open ports, exposed services, and possible risks.',
     userAction:
-      'The user starts an exposure assessment and reviews discovered technical findings.',
+      'The scan checks the selected domain and finds visible security issues that need review.',
     accent: 'red',
   },
   {
@@ -52,20 +52,20 @@ const steps: Step[] = [
     title: 'Run Simulated Attacks',
     shortTitle: 'Attack',
     description:
-      'Safely analyze possible attack paths and identify which vulnerabilities need attention.',
+      'Test possible attack paths in a safe and controlled way.',
     userAction:
-      'The user runs controlled simulations to understand how weaknesses could be exploited.',
+      'The system shows how discovered weaknesses could be used by attackers, without causing real damage.',
     accent: 'purple',
   },
   {
     id: '05',
     code: 'AI FIX',
-    title: 'Generate AI Solution',
+    title: 'Get AI Solution',
     shortTitle: 'AI Solution',
     description:
-      'Receive AI-based remediation steps, prevention tips, and security improvement guidance.',
+      'Generate clear AI-based fixes, prevention tips, and security guidance.',
     userAction:
-      'The user generates clear AI guidance for fixing vulnerabilities and reducing future risk.',
+      'The AI Solution page explains the findings in simple terms and suggests practical steps to reduce the risk.',
     accent: 'purple',
   },
   {
@@ -74,9 +74,9 @@ const steps: Step[] = [
     title: 'View Dashboard & Reports',
     shortTitle: 'Reports',
     description:
-      'Monitor current assessment progress on the Dashboard and export completed reports from the Reports page.',
+      'Track current progress on the Dashboard and export completed reports from the Reports page.',
     userAction:
-      'The Dashboard shows the live workflow, while Reports store saved and completed assessment history.',
+      'The Dashboard shows the current assessment flow, while Reports stores completed scans for viewing and export.',
     accent: 'cyan',
   },
 ];
