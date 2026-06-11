@@ -115,10 +115,10 @@ const WorkflowSection: React.FC = () => {
             USER FLOW
           </span>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-5 leading-tight">
-            <span className="text-gradient-red-blue">Security Assessment Journey</span>
+            <span className="text-gradient-red-blue">How Red Defence Works</span>
           </h2>
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-            A guided workflow that takes users from secure login to scan results, AI guidance, and final reports.
+            Follow the complete flow from login and domain verification to scan results, AI fixes, and final reports.
           </p>
         </div>
 
@@ -221,7 +221,7 @@ const WorkflowSection: React.FC = () => {
 
             <div className="border-t border-border/60 pt-5">
               <div className="text-[11px] font-semibold tracking-[0.25em] text-muted-foreground mb-2">
-                USER ACTION
+                What happens here
               </div>
               <p className="text-sm md:text-base text-foreground/80 leading-relaxed">
                 {active.userAction}
@@ -232,8 +232,7 @@ const WorkflowSection: React.FC = () => {
 
         {/* Bottom note */}
         <p className="text-center text-sm text-muted-foreground mt-10 max-w-2xl mx-auto leading-relaxed">
-          Dashboard shows the current assessment workflow, while Reports store saved and completed
-          assessment history.
+          Dashboard shows the current assessment progress. Reports stores completed scan history for viewing and export.
         </p>
       </div>
     </section>
