@@ -174,51 +174,11 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Enhanced Workflow Strip */}
-          <div className="mt-24 max-w-4xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-            <div className="glass-panel p-8 rounded-3xl neon-border-red relative overflow-hidden">
-              {/* Animated background gradient */}
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-secondary/5" />
-              
-              <h3 className="font-display text-sm uppercase tracking-widest text-muted-foreground text-center mb-8 relative z-10">
-                Security Workflow
-              </h3>
-              
-              <div className="flex items-center relative z-10">
-                {workflowSteps.map((step, index) => (
-                  <React.Fragment key={step.label}>
-                    <div className="flex flex-col items-center shrink-0">
-                      <div className={`relative p-4 rounded-2xl bg-card border-2 border-${step.color}/30 mb-3 transition-all duration-500 hover:scale-110 hover:border-${step.color} group cursor-pointer shadow-[0_0_15px_hsl(var(--${step.color})/0.3),0_0_30px_hsl(var(--${step.color})/0.15)]`}>
-                        <step.icon className={`w-7 h-7 text-${step.color} transition-all duration-300 group-hover:scale-110 drop-shadow-[0_0_8px_hsl(var(--${step.color})/0.8)]`} />
-                        <div className={`absolute inset-0 rounded-2xl bg-${step.color}/10 blur-xl opacity-100`} />
-                      </div>
-                      <span className="text-base font-display tracking-wide text-foreground">{step.label}</span>
-                      <span className="text-xs font-body text-muted-foreground mt-1 hidden sm:block">{step.description}</span>
-                    </div>
-                    {index < workflowSteps.length - 1 && (
-                      <StepConnector
-                        gradientId={`bottom-connector-${index}`}
-                        fromColor={
-                          workflowSteps[index].color === 'primary' ? '#ef4444'
-                          : workflowSteps[index].color === 'accent' ? '#a855f7'
-                          : '#06b6d4'
-                        }
-                        toColor={
-                          workflowSteps[index + 1].color === 'primary' ? '#ef4444'
-                          : workflowSteps[index + 1].color === 'accent' ? '#a855f7'
-                          : '#06b6d4'
-                        }
-                        active={true}
-                        className="mx-2"
-                      />
-                    )}
-                  </React.Fragment>
-                ))}
-              </div>
-            </div>
-          </div>
         </div>
       </section>
+
+      {/* Security Assessment Journey */}
+      <WorkflowSection />
 
       {/* Features Section */}
       <section className="py-24 relative">
